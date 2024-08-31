@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    <section id="subheader" class="relative jarallax text-light">
+        <img src="/media/images/background/3.webp" class="jarallax-img" alt="banner">
+        <div class="container relative z-index-1000">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <div class="spacer-double"></div>
+                    <h1>Thanks</h1>
+                    <ul class="crumb">
+                        <li><a href="/">Home</a></li>
+                        <li class="active">Thanks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="de-overlay"></div>
+    </section>
+
+    <!-- Gallery Seven -->
+    <section class="package-one">
+        <div class="outer-container">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12"></div>
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <h1>Thank You!</h1>
+                    <p>Your message has been sent successfully.</p>
+                    <div class="justify-content-between align-items-center">
+                        <a class="btn-main mb10 mb-3" href="{% url 'home' %}">Home</a>
+                    </div>
+                </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    <section id="subheader" class="relative jarallax text-light">
+        <img src="/media/images/background/1.webp" class="jarallax-img" alt="">
+        <div class="container relative z-index-1000">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="spacer-double"></div>
+                    <h1>Our Rooms</h1>
+                    <ul class="crumb">
+                        <li><a href="/">Home</a></li>
+                        <li class="active">Our Rooms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="de-overlay"></div>
+    </section>
+
+    <section class="relative">
+        <div class="container">
+            <div class="row g-4">
+                <!-- room begin -->
+                {% for rooms in room %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="bg-light hover relative text-center wow fadeInUp" data-wow-delay=".3s">
+                        <div class="relative overflow-hidden">
+                            {% if rooms.tag %}
+                            <div class="fs-14 p-0 px-3 abs bg-light text-dark fw-600 ms-3 mt-3 z-2">{{rooms.tag}}</div>
+                            {% endif %}
+                            <img src="/media/{{rooms.room_images.first.image}}" class="img-fluid hover-scale-1-1" alt="{{rooms.room}}">
+                        </div>
+                        <div class="p-3 mb-3 w-100 text-center">
+                            <h3 class="mb-0">{{rooms.room}}</h3>
+                            <div class="text-center fs-14 mb-3">
+                                <span class="mx-2">
+                                    {{rooms.number_of_guests}} Guests
+                                </span>
+                                <span class="mx-2">
+                                    {{rooms.room_area}} sqft
+                                </span>
+                                <span class="mx-2">
+                                    Rs. {{rooms.price}}/night
+                                </span>
+                            </div>
+                            <a class="btn-main w-100" href="{% url 'room_detail' rooms.slug %}">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- room end -->
+            </div>
+        </div>
+    </section>
+</div>
+<!-- content close -->
+
+{% endblock %}

@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    <section id="subheader" class="relative jarallax text-light">
+        <img src="/media/images/background/1.webp" class="jarallax-img" alt="">
+        <div class="container relative z-index-1000">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="spacer-double"></div>
+                    <h1>{{room_detail.room}}</h1>
+                    <ul class="crumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/rooms/">Our Room</a></li>
+                        <li class="active">{{room_detail.room}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="de-overlay"></div>
+    </section>
+
+    <section class="pt0 sm-pt-40 no-bottom">
+        <div class="owl-custom-nav menu-float" data-target="#gallery-carousel">
+            <a class="btn-next"></a>
+            <a class="btn-prev"></a>
+
+            <div id="gallery-carousel" class="owl-3-cols-autowidth owl-carousel owl-theme">
+                {% for image in images %}
+                <img src="/media/{{image.image}}" class="h-600px" alt="{{room_detail.room}}" title="{{room_detail.room}}">
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row g-4 gx-5">
+                <div class="col-lg-7">
+                    <h2>{{room_detail.room}}</h2>
+
+                    <div class="d-flex">
+                        <div class="relative me-4">
+                            <img src="/media/images/icons/guests.png" class="w-20px abs mt-1" alt="Guests">
+                            <p class="ml30 text-dark fw-500">{{room_detail.number_of_guests}} Guests</p>
+                        </div>
+
+                        <div class="relative me-4">
+                            <img src="/media/images/icons/size.png" class="w-20px abs mt-1" alt="Room Size">
+                            <p class="ml30 text-dark fw-500">{{room_detail.room_area}} sqft</p>
+                        </div>
+
+                        <div class="relative me-4">
+                            <img src="/media/images/icons/door.png" class="w-20px abs mt-1" alt="Connecting Rooms">
+                            <p class="ml30 text-dark fw-500">{{room_detail.connecting_rooms}} Connecting Rooms</p>
+                        </div>
+
+                        <div class="relative me-4">
+                            <img src="/media/images/icons/bed.png" class="w-20px abs mt-1" alt="King Bed">
+                            <p class="ml30 text-dark fw-500">{{room_detail.no_of_bed}} King Bed</p>
+                        </div>
+                    </div>
+
+                    <p>{{room_detail.description|linebreaks}}</p>
+
+                    <div class="spacer-single"></div>
+
+                    <h3 class="mb-2">Room Amenities</h3>
+                    <div class="row g-2">
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/tv.png" class="w-30px" alt="Smart TV">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Smart TV</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/shower.png" class="w-30px" alt="Shower">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Shower</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/safebox.png" class="w-30px" alt="Safebox">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Safebox</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/wifi.png" class="w-30px" alt="Wi-Fi">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Free Wi-Fi</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/desk.png" class="w-30px" alt="Work Desk">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Work Desk</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/refrigerator.png" class="w-30px" alt="Refrigerator">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Refrigerator</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/balcony.png" class="w-30px" alt="Balcony">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Balcony</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/bathub.png" class="w-30px" alt="Bathtub">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">Bathtub</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-6 fadeInRight" data-wow-delay=".2s">
+                            <div class="p-3 relative">
+                                <img src="/media/images/icons/city.png" class="w-30px" alt="City View">
+                                <p class="absolute abs-middle ml50 text-dark fw-500">City View</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spacer-single"></div>
+
+                    <h3 class="mb-2">Room Features</h3>
+                    <ul class="ul-style-2">
+                        <li>Complimentary High-Speed Wi-Fi</li>
+                        <li>Individual Air Conditioning and Heating</li>
+                        <li>Smart TV with Cable and Satellite</li>
+                        <li>In-Room Safe</li>
+                        <li>Direct Dial Intercom</li>
+                        <li>Alarm Clock, Iron, and Ironing Board</li>
+                        <li>All Rooms With Outside Windows / Ventilation and Balcony</li>
+                        <li>Hotel Hygiene</li>
+                        <li>Hygienic Washrooms Attached With Rooms</li>
+                        <li>Fully Sanitized Rooms</li>
+                        <li>Food Quality</li>
+                        <li>Restaurant</li>
+                        <li>Comfortable Bed</li>
+                        <li>Free Parking Lot</li>
+                        <li>Well Trained Hotel Staff</li>
+                        <li>Access to Medical Services</li>
+                        <li>Smoking Zones</li>
+                        <li>Garden Area</li>
+                        <li>Security Department</li>
+                        <li>Pet Friendly</li>
+                        <li>Room Dining</li>
+                        <li>A ‘Do Not Disturb’ Notice.</li>
+                        <li>A 'Clean My Room' Notice.</li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-5">
+                    <div class="bg-dark text-light p-5">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h3 class="mb-4">Reserve</h3>
+                            </div>
+
+                            <div>
+                                From
+                                <h3 class="d-inline">Rs. {{room_detail.price}}</h3>
+                                /night
+                            </div>
+                        </div>
+
+                        <form method="post">
+                        {% csrf_token %}
+                            <div class="row g-3">
+                                <input type="hidden" name="room" value="{{room_detail.room}}">
+
+                                <div class="col-md-12">
+                                    <h6 class="mb-2">Name</h6>
+                                    <input type="text" name="name" class="form-control no-bg bg-focus-color text-light" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h6 class="mb-2">Email</h6>
+                                    <input type="text" name="email" class="form-control no-bg bg-focus-color text-light" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h6 class="mb-2">Mobile Number</h6>
+                                    <input type="tel" name="phone" pattern="[7-9]{1}[0-9]{9}" title="Phone number with 7-9 and remaining 9 digit with 0-9" class="form-control no-bg bg-focus-color text-light" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h6 class="mb-2">Choose Date</h6>
+                                    <input type="text" name="date" id="date-picker" class="form-control no-bg bg-focus-color text-light" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="text-center">
+                                        <h6>Adult</h6>
+                                        <div class="de-number">
+                                            <span class="d-minus">-</span>
+                                            <input type="text" name="no_of_adults" class="no-border no-bg" value="1" required>
+                                            <span class="d-plus">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="text-center">
+                                        <h6>Children</h6>
+                                        <div class="de-number">
+                                            <span class="d-minus">-</span>
+                                            <input type="text" name="no_of_children" class="no-border no-bg" value="0" required>
+                                            <span class="d-plus">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="text-center">
+                                        <h6>Rooms</h6>
+                                        <div class="de-number">
+                                            <span class="d-minus">-</span>
+                                            <input type="text" name="no_of_rooms" class="no-border no-bg" value="1" required>
+                                            <span class="d-plus">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="text-center">
+                                        <h6>Extra Beds</h6>
+                                        <div class="de-number">
+                                            <span class="d-minus">-</span>
+                                            <input type="text" name="no_of_extra_beds" class="no-border no-bg" value="0">
+                                            <span class="d-plus">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h6 class="mb-2">Additional Message</h6>
+                                    <textarea name="message" class="form-control no-bg bg-focus-color text-light"></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="mb-4">Total Cost</h3>
+                                </div>
+
+                                <div>
+                                    <h3 class="d-inline">Rs. {{room_detail.price}}</h3>
+                                </div>
+                            </div>
+                            </div>
+
+                            <button type="submit" class="btn-main w-100">Book Your Stay</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- content close -->
+
+{% endblock %}
