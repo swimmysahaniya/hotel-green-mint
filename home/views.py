@@ -253,3 +253,4 @@ def room_detail(request, slug):
     }
 
     return render(request, "room-detail.html", context)
+
