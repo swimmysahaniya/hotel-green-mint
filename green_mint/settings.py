@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['greenminthotel.com', 'www.greenminthotel.com']
 
-CSRF_TRUSTED_ORIGINS = ['greenminthotel.com', 'www.greenminthotel.com']
+CSRF_TRUSTED_ORIGINS = ['https://greenminthotel.com', 'https://www.greenminthotel.com']
 
 
 # Application definition
