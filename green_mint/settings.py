@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-2zcwxsjae-glpnf%dinnog@z(m5ne)%fisyti@#9url&=bow(y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['64.227.158.56']
+ALLOWED_HOSTS = ['greenminthotel.com', 'www.greenminthotel.com']
 
-CSRF_TRUSTED_ORIGINS = ['64.227.158.56']
+CSRF_TRUSTED_ORIGINS = ['greenminthotel.com', 'www.greenminthotel.com']
 
 
 # Application definition

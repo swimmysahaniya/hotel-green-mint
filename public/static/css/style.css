@@ -13228,8 +13228,8 @@ i.bg-color-secondary {
 .max-line-4 {
    overflow: hidden;
    display: -webkit-box;
-   -webkit-line-clamp: 4;
-           line-clamp: 4; 
+   -webkit-line-clamp: 5;
+           line-clamp: 5;
    -webkit-box-orient: vertical;
 }
 
@@ -21246,4 +21246,12 @@ border-radius:20px 0 0 20px;
 .accordion-button:focus {
     border-color: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .125);
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.height {
+    height: 270px;
 }
