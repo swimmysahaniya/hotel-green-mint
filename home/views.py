@@ -51,7 +51,7 @@ def contact(request):
                 'Contact Enquiry',
                 '',  # Plain text message (optional)
                 'sahaniyaswimmy@gmail.com',
-                'reception@greenminthotel.com',
+                ['reception@greenminthotel.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
@@ -132,7 +132,7 @@ def reservation(request):
                 'Room Booking Enquiry',
                 '',  # Plain text message (optional)
                 'sahaniyaswimmy@gmail.com',
-                'reception@greenminthotel.com',
+                ['reception@greenminthotel.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
@@ -235,7 +235,7 @@ def room_detail(request, slug):
                 'Room Booking Enquiry',
                 '',  # Plain text message (optional)
                 'sahaniyaswimmy@gmail.com',
-                'reception@greenminthotel.com',
+                ['reception@greenminthotel.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
