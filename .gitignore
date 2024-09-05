@@ -1,3 +1,9 @@
 # Ignore compiled Python files
 *.pyc
 __pycache__/*.pyc
+*.pyo
+.DS_Store
+__pycache__/db.sqlite3
+__pycache__/
+db.sqlite3
+
