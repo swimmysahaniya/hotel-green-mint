@@ -29,7 +29,7 @@ def about(request):
 
 def contact(request):
 
-    if request.method == 'POST':
+    """if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             # Process the data in form.cleaned_data
@@ -50,8 +50,8 @@ def contact(request):
             send_mail(
                 'Contact Enquiry',
                 '',  # Plain text message (optional)
-                'sahaniyaswimmy@gmail.com',
-                ['sahaniyaswimmy@gmail.com', email],
+                'sahaniyaswimmy123@gmail.com',
+                ['sahaniyaswimmy123@gmail.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
@@ -59,11 +59,11 @@ def contact(request):
             # Redirect to a new URL:
             return HttpResponseRedirect('/thanks/')
     else:
-        form = ContactForm()
+        form = ContactForm()"""
 
     context = {
         'page': 'contact',
-        'form': form,
+        #'form': form,
     }
 
     return render(request, "contact.html", context)
@@ -99,7 +99,7 @@ def facilities(request):
 def reservation(request):
     room = Room.objects.all()
 
-    if request.method == 'POST':
+    """if request.method == 'POST':
         form = RoomBookingForm(request.POST)
         if form.is_valid():
             room = form.cleaned_data['room']
@@ -131,8 +131,8 @@ def reservation(request):
             send_mail(
                 'Room Booking Enquiry',
                 '',  # Plain text message (optional)
-                'sahaniyaswimmy@gmail.com',
-                ['sahaniyaswimmy@gmail.com', email],
+                'sahaniyaswimmy123@gmail.com',
+                ['sahaniyaswimmy123@gmail.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
@@ -140,12 +140,12 @@ def reservation(request):
             # Redirect to a new URL
             return HttpResponseRedirect('/thanks/')
     else:
-        form = RoomBookingForm()
+        form = RoomBookingForm()"""
 
     context = {
         'page': 'reservation',
         'room': room,
-        'form': form,
+        #'form': form,
     }
 
     return render(request, "reservation.html", context)
@@ -202,7 +202,7 @@ def room_detail(request, slug):
     one_room_detail = Room.objects.get(slug=slug)
     images = one_room_detail.room_images.all()
 
-    if request.method == 'POST':
+    """if request.method == 'POST':
         form = RoomBookingForm(request.POST)
         if form.is_valid():
             room = form.cleaned_data['room']
@@ -234,8 +234,8 @@ def room_detail(request, slug):
             send_mail(
                 'Room Booking Enquiry',
                 '',  # Plain text message (optional)
-                'sahaniyaswimmy@gmail.com',
-                ['sahaniyaswimmy@gmail.com', email],
+                'sahaniyaswimmy123@gmail.com',
+                ['sahaniyaswimmy123@gmail.com', email],
                 fail_silently=False,
                 html_message=html_message,
             )
@@ -243,13 +243,13 @@ def room_detail(request, slug):
             # Redirect to a new URL
             return HttpResponseRedirect('/thanks/')
     else:
-        form = RoomBookingForm()
+        form = RoomBookingForm()"""
 
     context = {
         'page': 'room detail',
         'room_detail': one_room_detail,
         'images': images,
-        'form': form,
+        #'form': form,
     }
 
     return render(request, "room-detail.html", context)
